@@ -1,6 +1,8 @@
 var express = require('express');
 var handlebars = require('express-handlebars').create({ defaultLayout: 'main.handlebars' });
 
+var sentences = require('./src/sentences.js');
+
 var app = express();
 
 app.engine('handlebars', handlebars.engine);
@@ -33,5 +35,4 @@ app.listen(app.get('port'), function() {
   console.log('Server is running at http://localhost:' + app.get('port') + ', Press Ctrl + C to exit.');
 });
 
-var sentences = ['Some text', 'Very important info'];
 
