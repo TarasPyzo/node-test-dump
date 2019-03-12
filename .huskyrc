@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "pre-commit": "npm run link_checker && npm run test"
+  }
+}
