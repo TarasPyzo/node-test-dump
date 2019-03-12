@@ -2,11 +2,32 @@
 <html>
   <head>
     <title>node js practice project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    {{#if showTests}}
+      <link rel="stylesheet" href="/vendor/mocha.css">
+    {{/if}}
   </head>
 
   <body>
-    <img src="ava.png" alt="logo" />
+    <img src="ava.png" width="50" height="50" alt="logo" />
     <h1>Main Layout</h1>
     {{{body}}}
+    {{#if showTests}}
+      <div id="mocha"></div>
+      <script src="/vendor/mocha.js"></script>
+      <script src="/vendor/chai.js"></script>
+      <script>
+        mocha.ui('tdd');
+        mocha.growl();
+        var assert = chai.assert;
+      </script>
+      <script src="/qa/test-global.js"></script>
+      {{#if pageTestScript}}
+        <script src="{{pageTestScript}}"></script>
+      {{/if}}
+      <script>mocha.run();</script>
+    {{/if}}
+    {{{_sections.jquery}}}
   </body>
 </html>

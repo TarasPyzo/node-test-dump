@@ -1,1 +1,33 @@
 <h1>Home Page</h1>
+
+<form method="get" action="/process-contact">
+  <lable>Name: </lable>
+  <input type="text" name="name" value="" />
+  <input type="submit" value="Submit" />
+</form>
+
+<a href="/api/tours">Get Tours</a>
+
+{{! secret comment }}
+<!-- public comment -->
+
+<ul>
+  {{#each tours}}
+    <li>
+      {{name}}
+      <span> - {{../currency.name}}</span>
+      {{#if ../../currency.valid}}
+        <span>Valid</span>
+      {{else}}
+        <span>Not Valid</span>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+
+{{#unless currency.valid}}
+  <p>{{currency.name}}</p>
+{{/unless}}
+
+{{> currency}}
+{{{_sections.firstCurrencySection}}}

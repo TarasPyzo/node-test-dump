@@ -4,7 +4,11 @@
   "description": "Some text",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "mocha",
+    "lint": "jshint server.js",
+    "link_checker": "blc http://localhost:3000 -ro",
+    "task_runner": "grunt"
   },
   "repository": "www.github.com",
   "author": "Taras",
@@ -12,5 +16,16 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2"
+  },
+  "devDependencies": {
+    "broken-link-checker": "^0.7.8",
+    "chai": "^4.2.0",
+    "grunt": "^1.0.3",
+    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-exec": "^3.0.0",
+    "jshint": "^2.10.1",
+    "mocha": "^6.0.2",
+    "pre-commit": "^1.2.2",
+    "zombie": "^6.1.4"
   }
 }
