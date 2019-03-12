@@ -8,8 +8,11 @@
     "test": "mocha",
     "lint": "jshint server.js",
     "link_checker": "blc http://localhost:3000 -ro",
-    "task_runner": "grunt"
+    "task_runner": "grunt",
+    "test1": "echo \"test1\" && exit 0",
+    "test2": "echo \"test2\" && exit 1"
   },
+  "pre-commit": ["test1", "test2"],
   "repository": "www.github.com",
   "author": "Taras",
   "license": "MIT",
