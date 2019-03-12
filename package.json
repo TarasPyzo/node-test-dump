@@ -8,11 +8,13 @@
     "test": "mocha",
     "lint": "jshint server.js",
     "link_checker": "blc http://localhost:3000 -ro",
-    "task_runner": "grunt",
-    "test1": "echo \"test1\" && exit 0",
-    "test2": "echo \"test2\" && exit 1"
+    "task_runner": "grunt"
   },
-  "pre-commit": ["test1", "test2"],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  },
   "repository": "www.github.com",
   "author": "Taras",
   "license": "MIT",
@@ -26,9 +28,9 @@
     "grunt": "^1.0.3",
     "grunt-contrib-jshint": "^2.0.0",
     "grunt-exec": "^3.0.0",
+    "husky": "^1.3.1",
     "jshint": "^2.10.1",
     "mocha": "^6.0.2",
-    "pre-commit": "^1.2.2",
     "zombie": "^6.1.4"
   }
 }
